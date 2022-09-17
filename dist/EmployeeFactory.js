@@ -9,14 +9,12 @@ const Leader_1 = __importDefault(require("./Leader"));
 const HR_1 = __importDefault(require("./HR"));
 class EmployeeFactory {
     static getEmployee(roleIndex) {
-        if (roleIndex == Role_1.Role.Member)
-            return new Member_1.default();
-        else if (roleIndex == Role_1.Role.Leader)
+        if (roleIndex == Role_1.Role.Leader)
             return new Leader_1.default();
         else if (roleIndex == Role_1.Role.HR)
             return new HR_1.default();
         else
-            return null;
+            return new Member_1.default();
     }
 }
 exports.default = EmployeeFactory;

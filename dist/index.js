@@ -35,19 +35,14 @@ do {
                 Checker_1.default.isGenderExist(gender);
                 Checker_1.default.numberValid([id, age, salary]);
                 let employee = EmployeeFactory_1.default.getEmployee(Number(role));
-                if (employee !== null) {
-                    employee.name = name;
-                    employee.id = parseInt(id);
-                    employee.age = parseInt(age);
-                    employee.salary = parseInt(salary);
-                    employee.gender = gender == 0 ? Gender_1.Gender.Male : Gender_1.Gender.Female;
-                    employee.role =
-                        role == 0 ? Role_1.Role.Member : role == 1 ? Role_1.Role.Leader : Role_1.Role.HR;
-                    company.addEmployee(employee);
-                }
-                else {
-                    throw new Error("Type of employee is wrong");
-                }
+                employee.name = name;
+                employee.id = parseInt(id);
+                employee.age = parseInt(age);
+                employee.salary = parseInt(salary);
+                employee.gender = gender == 0 ? Gender_1.Gender.Male : Gender_1.Gender.Female;
+                employee.role =
+                    role == 0 ? Role_1.Role.Member : role == 1 ? Role_1.Role.Leader : Role_1.Role.HR;
+                company.addEmployee(employee);
                 break;
             case 2:
                 company.showInfo();

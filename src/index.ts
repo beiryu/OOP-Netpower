@@ -40,18 +40,14 @@ do {
 
         let employee = EmployeeFactory.getEmployee(Number(role));
 
-        if (employee !== null) {
-          employee.name = name;
-          employee.id = parseInt(id);
-          employee.age = parseInt(age);
-          employee.salary = parseInt(salary);
-          employee.gender = gender == 0 ? Gender.Male : Gender.Female;
-          employee.role =
-            role == 0 ? Role.Member : role == 1 ? Role.Leader : Role.HR;
-          company.addEmployee(employee);
-        } else {
-          throw new Error("Type of employee is wrong");
-        }
+        employee.name = name;
+        employee.id = parseInt(id);
+        employee.age = parseInt(age);
+        employee.salary = parseInt(salary);
+        employee.gender = gender == 0 ? Gender.Male : Gender.Female;
+        employee.role =
+          role == 0 ? Role.Member : role == 1 ? Role.Leader : Role.HR;
+        company.addEmployee(employee);
         break;
 
       case 2:
@@ -79,7 +75,10 @@ do {
 
       case 6:
         console.log("N.of Male: ", company.countEmployeeByGender(Gender.Male));
-        console.log("N.of Female: ", company.countEmployeeByGender(Gender.Female));
+        console.log(
+          "N.of Female: ",
+          company.countEmployeeByGender(Gender.Female)
+        );
         break;
 
       default:
