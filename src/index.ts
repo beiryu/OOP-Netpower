@@ -19,6 +19,7 @@ do {
   console.log("4. See the salary of any employee");
   console.log("5. Show total of leader, member and HR in the company");
   console.log("6. Show total male (female) of the company");
+  console.log("-----------------------------------------------");
 
   var input = Number(prompt("Choose: "));
   if (input)
@@ -27,12 +28,12 @@ do {
         break;
 
       case 1:
-        let role = prompt("Role (0. Member, 1. Leader, 2. HR): ");
         let id = prompt("Id: ");
         let name = prompt("Name: ");
         let age = prompt("Age: ");
         let salary = prompt("Salary: ");
         let gender = prompt("Gender (0. Male, 1. Female): ");
+        let role = prompt("Role (0. Member, 1. Leader, 2. HR): ");
 
         Checker.isRoleExist(role);
         Checker.isGenderExist(gender);
@@ -52,7 +53,7 @@ do {
 
       case 2:
         company.showInfo();
-        let nthUser = prompt("Enter id User We want to delete: ");
+        let nthUser = prompt("Enter user's id u wanna delete: ");
         Checker.numberValid([nthUser]);
         company.deleteEmployee(nthUser);
         break;
@@ -62,7 +63,7 @@ do {
         break;
 
       case 4:
-        let urId = prompt("Enter your Id: ");
+        let urId = prompt("Enter your Id, to see the salary: ");
         Checker.numberValid([urId]);
         company.showInfo(urId);
         break;

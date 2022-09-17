@@ -19,18 +19,19 @@ do {
     console.log("4. See the salary of any employee");
     console.log("5. Show total of leader, member and HR in the company");
     console.log("6. Show total male (female) of the company");
+    console.log("-----------------------------------------------");
     var input = Number(prompt("Choose: "));
     if (input)
         switch (input) {
             case 0:
                 break;
             case 1:
-                let role = prompt("Role (0. Member, 1. Leader, 2. HR): ");
                 let id = prompt("Id: ");
                 let name = prompt("Name: ");
                 let age = prompt("Age: ");
                 let salary = prompt("Salary: ");
                 let gender = prompt("Gender (0. Male, 1. Female): ");
+                let role = prompt("Role (0. Member, 1. Leader, 2. HR): ");
                 Checker_1.default.isRoleExist(role);
                 Checker_1.default.isGenderExist(gender);
                 Checker_1.default.numberValid([id, age, salary]);
@@ -46,7 +47,7 @@ do {
                 break;
             case 2:
                 company.showInfo();
-                let nthUser = prompt("Enter id User We want to delete: ");
+                let nthUser = prompt("Enter user's id u wanna delete: ");
                 Checker_1.default.numberValid([nthUser]);
                 company.deleteEmployee(nthUser);
                 break;
@@ -54,7 +55,7 @@ do {
                 company.showInfo();
                 break;
             case 4:
-                let urId = prompt("Enter your Id: ");
+                let urId = prompt("Enter your Id, to see the salary: ");
                 Checker_1.default.numberValid([urId]);
                 company.showInfo(urId);
                 break;
