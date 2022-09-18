@@ -60,21 +60,6 @@ export default abstract class Employee {
 
   info(canSeeSalary?: boolean | undefined): string {
     let salaryReturn = canSeeSalary ? this._salary : "Not permit";
-    return (
-      "Id: " +
-      this._id +
-      "\nName: " +
-      this._name +
-      "\nAge: " +
-      this._age +
-      "\nGender: " +
-      this._gender +
-      "\nRole: " +
-      this._role +
-      "\nJob: " +
-      this.job() +
-      "\nSalary: " +
-      salaryReturn
-    );
+    return `Id: ${this._id} \nName: ${this._name}, Age: ${this._age}, Gender: ${this._gender}, Role: ${this._role} \nSalary: ${salaryReturn}`;
   }
 }
