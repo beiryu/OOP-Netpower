@@ -23,15 +23,11 @@ export default class Company {
   }
 
   private isIdExist(id: number): boolean {
-    return !!this._employees.find(obj => obj.id == id);
-    
+    return !!this._employees.find(e => e.id == id);
   }
 
   private isHR(id: number): boolean {
-    for (let employee of this._employees) {
-      if (employee.id == id && employee.role == Role.HR) return true;
-    }
-    return false;
+    return !!this._employees.find(e => e.id == id  && e.role == Role.HR);
   }
 
   private isEmpty(): boolean {
@@ -45,26 +41,22 @@ export default class Company {
 
   deleteEmployee(id: number) {
     if (!this.isIdExist(id)) throw new Error("The id is not exist!");
-    this._employees = this._employees.filter((e) => {
-      return e.id != id;
-    });
+    this._employees = this._employees.filter(e => e.id != id);
   }
 
   showInfo(id?: number) {
     if (this.isEmpty()) throw new Error("Company have no anyone!");
-    for (let employee of this._employees) {
-      console.log(
-        employee.info(employee.id == id || (id && this.isHR(id)) ? true : false)
-      );
-      console.log("-------------");
-    }
+    this._employees.forEach(e => {
+      let canViewSalary: boolean = (id && !!this.isHR(id)) || e.id == id; 
+      console.log(e.info(canViewSalary));
+    })
   }
 
   countEmployee<T>(key: T): number {
     let count: number = 0;
-    for (let employee of this._employees) {
-      if (employee.gender == key) count++;
-    }
+    this._employees.forEach(e => {
+      if (e.gender == key) count++;
+    })
     return count;
   }
 }
