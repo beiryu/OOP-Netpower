@@ -1,4 +1,3 @@
-import { Gender } from "./types/Gender";
 import { Role } from "./types/Role";
 
 import Employee from "./Employee";
@@ -66,18 +65,10 @@ export default class Company {
     }
   }
 
-  countEmployeeByType(role: Role): number {
+  countEmployee<T>(key: T): number {
     let count: number = 0;
     for (let employee of this._employees) {
-      if (employee.role == role) count++;
-    }
-    return count;
-  }
-
-  countEmployeeByGender(gender: Gender): number {
-    let count: number = 0;
-    for (let employee of this._employees) {
-      if (employee.gender == gender) count++;
+      if (employee.gender == key) count++;
     }
     return count;
   }

@@ -69,17 +69,18 @@ do {
         break;
 
       case 5:
-        console.log("N.of Member: ", company.countEmployeeByType(Role.Member));
-        console.log("N.of Leader: ", company.countEmployeeByType(Role.Leader));
-        console.log("N.of HR: ", company.countEmployeeByType(Role.HR));
+        console.log("N.of Member: ", company.countEmployee<Role>(Role.Member));
+        console.log("N.of Leader: ", company.countEmployee<Role>(Role.Leader));
+        console.log("N.of HR: ", company.countEmployee<Role>(Role.HR));
         break;
 
       case 6:
-        console.log("N.of Male: ", company.countEmployeeByGender(Gender.Male));
+        console.log("N.of Male: ", company.countEmployee<Gender>(Gender.Male));
         console.log(
           "N.of Female: ",
-          company.countEmployeeByGender(Gender.Female)
+          company.countEmployee<Gender>(Gender.Female)
         );
+
         break;
 
       default:
