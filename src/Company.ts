@@ -26,10 +26,8 @@ export default class Company {
   }
 
   private isIdExist(id: number): boolean {
-    for (let employee of this.employees) {
-      if (employee.id == id) return true;
-    }
-    return false;
+    return !!this._employees.find(obj => obj.id == id);
+    
   }
 
   private isHR(id: number): boolean {
