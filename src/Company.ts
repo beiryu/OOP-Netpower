@@ -11,10 +11,7 @@ export default class Company {
   private constructor() {}
 
   static getInstance(): Company {
-    if (this._onlyInstance == null) {
-      this._onlyInstance = new Company();
-    }
-    return this._onlyInstance;
+    return (this._onlyInstance) ? this._onlyInstance : new Company();
   }
 
   get employees(): Employee[] {
