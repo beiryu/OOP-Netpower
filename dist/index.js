@@ -60,13 +60,13 @@ do {
                 company.showInfo(urId);
                 break;
             case 5:
-                console.log("N.of Member: ", company.countEmployeeByType(Role_1.Role.Member));
-                console.log("N.of Leader: ", company.countEmployeeByType(Role_1.Role.Leader));
-                console.log("N.of HR: ", company.countEmployeeByType(Role_1.Role.HR));
+                console.log("N.of Member: ", company.countEmployee(Role_1.Role.Member));
+                console.log("N.of Leader: ", company.countEmployee(Role_1.Role.Leader));
+                console.log("N.of HR: ", company.countEmployee(Role_1.Role.HR));
                 break;
             case 6:
-                console.log("N.of Male: ", company.countEmployeeByGender(Gender_1.Gender.Male));
-                console.log("N.of Female: ", company.countEmployeeByGender(Gender_1.Gender.Female));
+                console.log("N.of Male: ", company.countEmployee(Gender_1.Gender.Male));
+                console.log("N.of Female: ", company.countEmployee(Gender_1.Gender.Female));
                 break;
             default:
                 console.log("The number is not in the list");

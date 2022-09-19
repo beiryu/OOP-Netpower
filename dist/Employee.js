@@ -3,13 +3,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Role_1 = require("./types/Role");
 const Gender_1 = require("./types/Gender");
 class Employee {
-    constructor(_id = 0, _name = "", _age = 0, _salary = 0, _gender = Gender_1.Gender.Male, _role = Role_1.Role.Member) {
-        this._id = _id;
-        this._name = _name;
-        this._age = _age;
-        this._salary = _salary;
-        this._gender = _gender;
-        this._role = _role;
+    constructor() {
+        this._id = 0;
+        this._name = "";
+        this._age = 0;
+        this._salary = 0;
+        this._gender = Gender_1.Gender.Male;
+        this._role = Role_1.Role.Member;
     }
     get id() {
         return this._id;
@@ -49,7 +49,7 @@ class Employee {
     }
     info(canSeeSalary) {
         let salaryReturn = canSeeSalary ? this._salary : "Not permit";
-        return `"Id: ${this._id} \nName: ${this._name}, Age: ${this._age}, Gender: ${this._gender}, Role: ${this._role} \nSalary: ${salaryReturn}`;
+        return `Id: ${this._id} \nName: ${this._name}, Age: ${this._age}, Gender: ${this._gender}, Role: ${this._role} \nSalary: ${salaryReturn}`;
     }
 }
 exports.default = Employee;

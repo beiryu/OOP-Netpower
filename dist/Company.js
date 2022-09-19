@@ -54,18 +54,10 @@ class Company {
             console.log("-------------");
         }
     }
-    countEmployeeByType(role) {
+    countEmployee(key) {
         let count = 0;
         for (let employee of this._employees) {
-            if (employee.role == role)
-                count++;
-        }
-        return count;
-    }
-    countEmployeeByGender(gender) {
-        let count = 0;
-        for (let employee of this._employees) {
-            if (employee.gender == gender)
+            if (employee.gender == key)
                 count++;
         }
         return count;

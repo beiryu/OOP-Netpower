@@ -2,14 +2,12 @@ import { Role } from "./types/Role";
 import { Gender } from "./types/Gender";
 
 export default abstract class Employee {
-  constructor(
-    protected _id: number = 0,
-    protected _name: string = "",
-    protected _age: number = 0,
-    protected _salary: number = 0,
-    protected _gender: Gender = Gender.Male,
-    protected _role: Role = Role.Member
-  ) {}
+  protected _id: number = 0;
+  protected _name: string = "";
+  protected _age: number = 0;
+  protected _salary: number = 0;
+  protected _gender: Gender = Gender.Male;
+  protected _role: Role = Role.Member;
 
   get id(): number {
     return this._id;
